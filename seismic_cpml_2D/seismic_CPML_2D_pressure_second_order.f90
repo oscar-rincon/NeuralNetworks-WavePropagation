@@ -162,14 +162,14 @@
   double precision, parameter :: density = 2200.d0
 
 ! total number of time steps
-  integer, parameter :: NSTEP = 1000
+  integer, parameter :: NSTEP = 1250
 
 ! time step in seconds
-  double precision, parameter :: DELTAT = 5.0d-4!5.2d-4
+  double precision, parameter :: DELTAT = 0.0002!5.0d-4!5.2d-4
 
 ! parameters for the source
-  double precision, parameter :: f0 = 20.d0
-  double precision, parameter :: t0 = 0.05!1.20d0 / f0
+  double precision, parameter :: f0 = 20.d0!20.d0
+  double precision, parameter :: t0 = 0!1.20d0 / f0
   double precision, parameter :: factor = 1.d0
 
 ! source (in pressure)
@@ -187,7 +187,7 @@
   double precision, parameter :: yfin = 2301.d0   ! last receiver y in meters
 
 ! display information on the screen from time to time
-  integer, parameter :: IT_DISPLAY = 10
+  integer, parameter :: IT_DISPLAY = 25
 
 ! value of PI
   double precision, parameter :: PI = 3.141592653589793238462643d0
