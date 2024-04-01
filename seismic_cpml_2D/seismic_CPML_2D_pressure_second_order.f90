@@ -138,7 +138,7 @@
 !             or change all the declarations and constants in the code from double precision to single.
 
   implicit none
-
+  character(len=100) :: file_name
 ! flags to add PML layers to the edges of the grid
   logical, parameter :: USE_PML_XMIN = .true.
   logical, parameter :: USE_PML_XMAX = .true.
@@ -649,6 +649,10 @@
                          NPOINTS_PML,USE_PML_XMIN,USE_PML_XMAX,USE_PML_YMIN,USE_PML_YMAX,3)
 
   endif
+  ! Guardar pressure_future en un archivo externo
+    write(file_name, "('pressure_future_', I0, '.txt')") it
+    call save_pressure_future(pressure_future, NX, NY, file_name)
+
 
 ! move new values to old values (the present becomes the past, the future becomes the present)
   pressure_past(:,:) = pressure_present(:,:)
@@ -845,3 +849,18 @@
 
   end subroutine create_color_image
 
+  subroutine save_pressure_future(pressure_future, NX, NY, file_name)
+    implicit none
+    integer, intent(in) :: NX, NY
+    double precision, dimension(NX, NY), intent(in) :: pressure_future
+    character(len=*), intent(in) :: file_name
+
+    integer :: i, j
+    open(unit=27, file=file_name, status='unknown')
+    do j = 1, NY
+      do i = 1, NX
+        write(27, *) i, j, pressure_future(i, j)
+      end do
+    end do
+    close(27)
+  end subroutine save_pressure_future
