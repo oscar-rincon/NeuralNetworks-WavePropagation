@@ -170,7 +170,7 @@
 ! parameters for the source
   double precision, parameter :: f0 = 20.d0!20.d0
   double precision, parameter :: t0 = 0!1.20d0 / f0
-  double precision, parameter :: factor = 1.d0
+  double precision, parameter :: factor = 2.d0
 
 ! source (in pressure)
   double precision, parameter :: xsource = 750.d0
