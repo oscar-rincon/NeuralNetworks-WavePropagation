@@ -21,7 +21,7 @@ NPROC                           = 1              # number of processes
 
 # time step parameters
 # total number of time steps
-NSTEP                           = 3000
+NSTEP                           = 6000
 
 # duration of a time step (see section "How to choose the time step" of the manual for how to do this)
 DT                              = 1.0d-4
@@ -181,9 +181,9 @@ rec_normal_to_surface           = .false.        # base anglerec normal to surfa
 
 # first receiver set (repeat these 6 lines and adjust nreceiversets accordingly)
 nrec                            = 1              # number of receivers
-xdeb                            = 0.0d0       # first receiver x in meters
-zdeb                            = 0.0d0       # first receiver z in meters
-xfin                            = 1500.0d0        # last receiver x in meters (ignored if only one receiver)
+xdeb                            = 750.0d0       # first receiver x in meters
+zdeb                            = 750.0d0       # first receiver z in meters
+xfin                            = 0.0d0        # last receiver x in meters (ignored if only one receiver)
 zfin                            = 0.0d0       # last receiver z in meters (ignored if only one receiver)
 record_at_surface_same_vertical = .false.        # receivers inside the medium or at the surface
 
