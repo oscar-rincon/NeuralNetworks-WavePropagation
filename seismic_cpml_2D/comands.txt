@@ -1,0 +1,4 @@
+gfortran seismic_CPML_2D_pressure_second_order.f90 -o output/seismic_CPML_2D_pressure_second_o
+rder.out
+
+./seismic_CPML_2D_pressure_second_order.out

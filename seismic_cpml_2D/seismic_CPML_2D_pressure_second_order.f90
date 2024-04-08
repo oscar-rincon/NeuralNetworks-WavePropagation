@@ -146,11 +146,11 @@
   logical, parameter :: USE_PML_YMAX = .true.
 
 ! total number of grid points in each direction of the grid
-  integer, parameter :: NX = 301
-  integer, parameter :: NY = 301
+  integer, parameter :: NX = 2000
+  integer, parameter :: NY = 2000
 
 ! size of a grid cell
-  double precision, parameter :: DELTAX = 5.0d0
+  double precision, parameter :: DELTAX = 0.75d0
   double precision, parameter :: DELTAY = DELTAX
 
 ! thickness of the PML layer in grid points
@@ -162,7 +162,7 @@
   double precision, parameter :: density = 2200.d0
 
 ! total number of time steps
-  integer, parameter :: NSTEP = 1250
+  integer, parameter :: NSTEP = 1500
 
 ! time step in seconds
   double precision, parameter :: DELTAT = 0.0002!5.0d-4!5.2d-4
@@ -170,7 +170,7 @@
 ! parameters for the source
   double precision, parameter :: f0 = 20.d0!20.d0
   double precision, parameter :: t0 = 0!1.20d0 / f0
-  double precision, parameter :: factor = 2.d0
+  double precision, parameter :: factor = 1.0d0
 
 ! source (in pressure)
   double precision, parameter :: xsource = 750.d0
@@ -181,13 +181,13 @@
 ! receivers
   integer, parameter :: NREC = 1
 !! DK DK I use 2301 here instead of 2300 in order to fall exactly on a grid point
-  double precision, parameter :: xdeb = 2301.d0   ! first receiver x in meters
-  double precision, parameter :: ydeb = 2301.d0   ! first receiver y in meters
-  double precision, parameter :: xfin = 2301.d0   ! last receiver x in meters
-  double precision, parameter :: yfin = 2301.d0   ! last receiver y in meters
+  double precision, parameter :: xdeb = 800.d0   ! first receiver x in meters
+  double precision, parameter :: ydeb = 750.d0   ! first receiver y in meters
+  double precision, parameter :: xfin = 800.d0   ! last receiver x in meters
+  double precision, parameter :: yfin = 750.d0   ! last receiver y in meters
 
 ! display information on the screen from time to time
-  integer, parameter :: IT_DISPLAY = 25
+  integer, parameter :: IT_DISPLAY = 125
 
 ! value of PI
   double precision, parameter :: PI = 3.141592653589793238462643d0
@@ -514,7 +514,7 @@
   Courant_number = cp_unrelaxed * DELTAT * sqrt(1.d0/DELTAX**2 + 1.d0/DELTAY**2)
   print *,'Courant number is ',Courant_number
   print *
-  if (Courant_number > 1.d0) stop 'time step is too large, simulation will be unstable'
+  if (Courant_number > 2.d0) stop 'time step is too large, simulation will be unstable'
 
 ! suppress old files (can be commented out if "call system" is missing in your compiler)
   call system('rm -f Vx_*.dat Vy_*.dat image*.pnm image*.gif')
@@ -648,10 +648,11 @@
     call create_color_image(pressure_future,NX,NY,it,ISOURCE,JSOURCE,ix_rec,iy_rec,nrec, &
                          NPOINTS_PML,USE_PML_XMIN,USE_PML_XMAX,USE_PML_YMIN,USE_PML_YMAX,3)
 
-  endif
-  ! Guardar pressure_future en un archivo externo
+    ! Guardar pressure_future en un archivo externo
     write(file_name, "('pressure_future_', I0, '.txt')") it
     call save_pressure_future(pressure_future, NX, NY, file_name)
+  endif
+
 
 
 ! move new values to old values (the present becomes the past, the future becomes the present)
