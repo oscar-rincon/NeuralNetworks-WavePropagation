@@ -146,11 +146,11 @@
   logical, parameter :: USE_PML_YMAX = .true.
 
 ! total number of grid points in each direction of the grid
-  integer, parameter :: NX = 2000
-  integer, parameter :: NY = 2000
+  integer, parameter :: NX = 300
+  integer, parameter :: NY = 300
 
 ! size of a grid cell
-  double precision, parameter :: DELTAX = 0.75d0
+  double precision, parameter :: DELTAX = 5.d0
   double precision, parameter :: DELTAY = DELTAX
 
 ! thickness of the PML layer in grid points
@@ -168,9 +168,9 @@
   double precision, parameter :: DELTAT = 0.0002!5.0d-4!5.2d-4
 
 ! parameters for the source
-  double precision, parameter :: f0 = 20.d0!20.d0
-  double precision, parameter :: t0 = 0!1.20d0 / f0
-  double precision, parameter :: factor = 1.0d0
+  double precision, parameter :: f0 = 20.d0 
+  double precision, parameter :: t0 = 1.20d0 / f0
+  double precision, parameter :: factor = 1.d4
 
 ! source (in pressure)
   double precision, parameter :: xsource = 750.d0
