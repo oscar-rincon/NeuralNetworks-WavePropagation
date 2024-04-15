@@ -150,7 +150,7 @@
   integer, parameter :: NY = 300
 
 ! size of a grid cell
-  double precision, parameter :: DELTAX = 5.d0
+  double precision, parameter :: DELTAX = 5.0d0
   double precision, parameter :: DELTAY = DELTAX
 
 ! thickness of the PML layer in grid points
@@ -162,10 +162,10 @@
   double precision, parameter :: density = 2200.d0
 
 ! total number of time steps
-  integer, parameter :: NSTEP = 1500
+  integer, parameter :: NSTEP = 3500
 
 ! time step in seconds
-  double precision, parameter :: DELTAT = 0.0002!5.0d-4!5.2d-4
+  double precision, parameter :: DELTAT = 0.0001!5.0d-4!5.2d-4
 
 ! parameters for the source
   double precision, parameter :: f0 = 20.d0 
