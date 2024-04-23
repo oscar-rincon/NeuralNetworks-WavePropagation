@@ -1,0 +1,11 @@
+Training time: 6.415355920791626 seconds
+Number of iterations: 10000
+Initial loss: 0.666191577911377
+Final loss: 0.00010209248284809291
+Neural network architecture: NeuralNetwork(
+  (layer1): Linear(in_features=1, out_features=5, bias=True)
+  (layer2): Linear(in_features=5, out_features=5, bias=True)
+  (output_layer): Linear(in_features=5, out_features=1, bias=True)
+)
+Optimizer used: Adam
+Learning rate: 0.01
