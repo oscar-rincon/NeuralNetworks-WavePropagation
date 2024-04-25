@@ -1,0 +1,34 @@
+Summary of Neural Network Training
+=================================
+
+Neural Network Architecture:
+NeuralNetwork(
+  (layer1): Linear(in_features=2, out_features=10, bias=True)
+  (layer2): Linear(in_features=10, out_features=10, bias=True)
+  (output_layer): Linear(in_features=10, out_features=1, bias=True)
+)
+
+Optimizer Used:
+Adam
+
+Learning Rate:
+0.01
+
+Number of Iterations:
+1000
+
+Initial Loss:
+0.852191686630249
+
+Final Loss:
+0.000695479684509337
+
+Training Time:
+15.652572870254517 seconds
+
+Average Loss:
+0.01879227429133607
+
+Minimum Loss:
+0.000695479684509337 at iteration 999
+
