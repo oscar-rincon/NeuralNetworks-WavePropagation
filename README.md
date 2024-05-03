@@ -8,24 +8,31 @@ This repository contains a collection of notebooks that demonstrate various deep
 4. [NNs-Based 1D Acoustic Wave Simulation with a Source Term](https://github.com/oscar-rincon/NeuralNetworks-WavePropagation/blob/main/notebooks/4_1D_Acoustic_Wave_Source_NNs.ipynb)
 5. [PINNs-Based 1D Acoustic Wave Simulation with a Source Term](https://github.com/oscar-rincon/NeuralNetworks-WavePropagation/blob/main/notebooks/5_1D_Acoustic_Wave_Source_PINNs.ipynb)
 
+# Installation
 
-# Instalation
-
-We suggest setting up a new Python environment, for example:
+We recommend setting up a new Python environment. You can do this by running the following commands:
 
  ```
-conda create --name comparative-nn-wave-env
-conda activate comparative-nn-wave-env
+ conda create --name comparative-nn-wave-env
+ conda activate comparative-nn-wave-env
  ```
 
-then cloning this repository:
+Next, clone this repository by using the command:
 
  ```
 git clone https://github.com/oscar-rincon/NeuralNetworks-WavePropagation.git
  ```
 
-and running this command in the base  `NeuralNetworks-WavePropagation/` directory:
+Finally, navigate to the base `NeuralNetworks-WavePropagation/` directory and run the following command to install the necessary dependencies:
 
  ```
  conda env update --name comparative-nn-wave-env --file comparative_nn_wave_env.yaml
  ```
+
+To verify the packages installed in your `comparative-nn-wave-env` conda environment, you can use the following command:
+
+ ```
+ conda list -n comparative-nn-wave-env
+ ```
+
+ 
