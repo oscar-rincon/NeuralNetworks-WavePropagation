@@ -14,15 +14,18 @@ This repository contains a collection of notebooks that demonstrate various deep
 We suggest setting up a new Python environment, for example:
 
  ```
-conda create -n comparative-nn-wave-env  # Using conda
+conda create --name comparative-nn-wave-env
 conda activate comparative-nn-wave-env
  ```
 
 then cloning this repository:
 
  ```
-git clone 
+git clone https://github.com/oscar-rincon/NeuralNetworks-WavePropagation.git
  ```
 
- and running this command in the base FBPINNs/ directory (will also install all of the dependencies):
+and running this command in the base  `NeuralNetworks-WavePropagation/` directory:
 
+ ```
+ conda env update --name comparative-nn-wave-env --file comparative_nn_wave_env.yaml
+ ```

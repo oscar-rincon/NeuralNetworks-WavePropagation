@@ -1,0 +1,11 @@
+name: comparative-nn-wave-env
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pickle
+  - torch
+  - matplotlib
+  - time
+  - warnings
+  - random
