@@ -9,5 +9,20 @@ This repository contains a collection of notebooks that demonstrate various deep
 5. [PINNs-Based 1D Acoustic Wave Simulation with a Source Term](https://github.com/oscar-rincon/NeuralNetworks-WavePropagation/blob/main/notebooks/5_1D_Acoustic_Wave_Source_PINNs.ipynb)
 
 
+# Instalation
 
- 
+We suggest setting up a new Python environment, for example:
+
+ ```
+conda create -n comparative-nn-wave-env  # Using conda
+conda activate comparative-nn-wave-env
+ ```
+
+then cloning this repository:
+
+ ```
+git clone 
+ ```
+
+ and running this command in the base FBPINNs/ directory (will also install all of the dependencies):
+
