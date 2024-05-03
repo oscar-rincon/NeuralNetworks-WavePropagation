@@ -1,11 +1,10 @@
 name: comparative-nn-wave-env
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - numpy
-  - pickle
-  - torch
+  - pandas
   - matplotlib
-  - time
-  - warnings
-  - random
+  - jupyter
+  - pytorch
